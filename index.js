@@ -118,8 +118,8 @@ client.on("messageCreate", async (message) => {
                 const poke1 = findPokemon(tokens[1]),
                     poke2 = findPokemon(tokens[2]);
                 if (poke1 && poke2) {
-                    message.channel.send(`${data.sprites[tokens[1]]}`);
-                    message.channel.send(`${data.sprites[tokens[2]]}`);
+                    message.channel.send(`${data.sprites[tokens[1].toLowerCase()]}`);
+                    message.channel.send(`${data.sprites[tokens[2].toLowerCase()]}`);
                     message.channel.send(`${message.author.toString()}\n${fusionMessage(poke1, poke2)}`);
                 } else {
                     message.channel.send("Some pokémon in your message doesn't exist or is incorrectly formatted!");
